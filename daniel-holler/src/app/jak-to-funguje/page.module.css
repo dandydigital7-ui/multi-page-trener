@@ -1,0 +1,352 @@
+.header {
+  padding-top: calc(68px + 5rem);
+  padding-bottom: 3rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.headerInner {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.pageTitle {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 12vw, 10rem);
+  line-height: 0.88;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  margin-top: 0.4rem;
+}
+
+.headerDesc {
+  max-width: 360px;
+  color: var(--white-dim);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  padding-bottom: 0.5rem;
+}
+
+.headerLine {
+  height: 1px;
+  background: var(--border);
+  margin-top: 3rem;
+}
+
+/* STEPS */
+.steps {
+  padding: 4rem 0 6rem;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 80px 1fr 200px;
+  gap: 3rem;
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+  position: relative;
+}
+
+.stepNumber {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.stepNum {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--gold);
+  line-height: 1;
+  letter-spacing: 0.05em;
+}
+
+.stepConnector {
+  width: 1px;
+  height: calc(100% - 60px);
+  background: linear-gradient(to bottom, var(--gold-dim), transparent);
+  margin-top: 12px;
+  min-height: 60px;
+}
+
+.stepContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.stepTag {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.stepTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  letter-spacing: 0.04em;
+  color: var(--white);
+  line-height: 1;
+}
+
+.stepDesc {
+  color: var(--white-dim);
+  font-size: 0.9rem;
+  line-height: 1.75;
+  max-width: 500px;
+}
+
+.stepDetails {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+}
+
+.stepDetail {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.82rem;
+  color: var(--white-dim);
+}
+
+.detailMark {
+  color: var(--gold-dim);
+  flex-shrink: 0;
+}
+
+.stepMeta {
+  padding-top: 0.3rem;
+}
+
+.stepMetaLabel {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--white-muted);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.stepMetaValue {
+  font-size: 0.82rem;
+  color: var(--gold-light);
+  font-family: var(--font-serif);
+  font-style: italic;
+}
+
+/* WHY */
+.why {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 5rem 0;
+}
+
+.whyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.whyLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.whyTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  margin-top: 0.5rem;
+}
+
+.whyRight {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.whyText {
+  color: var(--white-dim);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+.whyFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.whyFeature {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.featureCheck {
+  color: var(--gold);
+  font-size: 0.9rem;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.whyFeature strong {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--white);
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.02em;
+}
+
+.whyFeature p {
+  font-size: 0.82rem;
+  color: var(--white-dim);
+  line-height: 1.6;
+}
+
+/* LOCATION */
+.location {
+  padding: 5rem 0;
+}
+
+.locationGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.locationTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.locationDesc {
+  color: var(--white-dim);
+  font-size: 0.9rem;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+.locationPoints {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.locationPoints span {
+  font-size: 0.8rem;
+  color: var(--white-dim);
+  padding-left: 1rem;
+  position: relative;
+}
+
+.locationPoints span::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 0.7rem;
+}
+
+.locationBox {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 2.5rem;
+}
+
+.locationAddress {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.locationIcon {
+  font-size: 1.5rem;
+}
+
+.locationAddress strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--white);
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.02em;
+}
+
+.locationAddress p {
+  font-size: 0.82rem;
+  color: var(--white-dim);
+  line-height: 1.6;
+}
+
+/* CTA */
+.cta {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 5rem 0;
+}
+
+.ctaInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.ctaTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4.5vw, 4rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--white);
+}
+
+.ctaActions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) {
+  .step { grid-template-columns: 60px 1fr; }
+  .stepMeta { grid-column: 2; padding-top: 0; }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding-top: calc(68px + 3rem);
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+  .headerInner { flex-direction: column; align-items: flex-start; }
+  .step { grid-template-columns: 1fr; gap: 1rem; }
+  .stepNumber { flex-direction: row; align-items: center; gap: 1rem; }
+  .stepConnector { display: none; }
+  .whyGrid { grid-template-columns: 1fr; gap: 3rem; }
+  .locationGrid { grid-template-columns: 1fr; gap: 3rem; }
+  .ctaInner { flex-direction: column; gap: 2rem; }
+}

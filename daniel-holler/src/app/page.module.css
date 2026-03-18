@@ -1,0 +1,478 @@
+.hero {
+  min-height: 100vh;
+  padding-top: 68px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroGrid {
+  flex: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 5rem 2rem 4rem;
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.heroTitle {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.88;
+  margin-top: 0.5rem;
+}
+
+.titleLine1 {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 11vw, 10rem);
+  letter-spacing: 0.02em;
+  color: var(--white);
+}
+
+.titleLine2 {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  color: var(--gold-light);
+  line-height: 1.1;
+  padding-left: 0.5rem;
+}
+
+.titleLine3 {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 11vw, 10rem);
+  letter-spacing: 0.02em;
+  color: var(--white);
+}
+
+.heroDesc {
+  font-size: 1rem;
+  color: var(--white-dim);
+  max-width: 460px;
+  line-height: 1.7;
+}
+
+.heroCtas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.heroStats {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.statNum {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.65rem;
+  color: var(--white-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.statDivider {
+  width: 1px;
+  height: 40px;
+  background: var(--border);
+}
+
+/* Hero image */
+.heroImage {
+  position: relative;
+}
+
+.imageFrame {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  filter: grayscale(20%) contrast(1.05);
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.imageFrame:hover .img {
+  transform: scale(1.04);
+}
+
+.imageBadge {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  background: rgba(10, 10, 8, 0.9);
+  border: 1px solid var(--border);
+  padding: 0.5rem 1rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white-dim);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  backdrop-filter: blur(8px);
+}
+
+.badgeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 8px #4ade80;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.imageAccent {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 120px;
+  height: 120px;
+  border: 1px solid var(--gold-dim);
+  z-index: -1;
+}
+
+.heroScroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--white-muted);
+  writing-mode: horizontal-tb;
+}
+
+.scrollLine {
+  width: 40px;
+  height: 1px;
+  background: var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.scrollLine::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--gold);
+  animation: scrollAnim 2s ease-in-out infinite;
+}
+
+@keyframes scrollAnim {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+/* MARQUEE */
+.marqueeWrap {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.marquee {
+  display: flex;
+  animation: marquee 22s linear infinite;
+  white-space: nowrap;
+  padding: 1rem 0;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marqueeItem {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.1em;
+  color: var(--white-muted);
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.marqueeDot {
+  color: var(--gold);
+}
+
+/* INTRO */
+.intro {
+  padding: 7rem 0;
+}
+
+.introGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.introLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.introTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  margin-top: 0.5rem;
+}
+
+.introRight {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-top: 3.5rem;
+}
+
+.introText {
+  color: var(--white-dim);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.introLink {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  transition: color 0.2s;
+  margin-top: 0.5rem;
+}
+
+.introLink:hover { color: var(--gold-light); }
+
+/* SERVICES */
+.services {
+  padding: 4rem 0 7rem;
+}
+
+.sectionHead {
+  display: flex;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  margin-top: 0.5rem;
+  flex: 1;
+}
+
+.seeAll {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+  transition: color 0.2s;
+  white-space: nowrap;
+  padding-bottom: 0.5rem;
+}
+
+.seeAll:hover { color: var(--gold-light); }
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.serviceCard {
+  background: var(--surface);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: background 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.serviceCard::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s;
+}
+
+.serviceCard:hover {
+  background: var(--surface-2);
+}
+
+.serviceCard:hover::before {
+  transform: scaleX(1);
+}
+
+.serviceNum {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  color: var(--white-muted);
+  letter-spacing: 0.1em;
+}
+
+.serviceIcon {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+}
+
+.serviceTitle {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  letter-spacing: 0.06em;
+  color: var(--white);
+  margin-top: 0.25rem;
+}
+
+.serviceDesc {
+  font-size: 0.85rem;
+  color: var(--white-dim);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.serviceArrow {
+  font-size: 1.2rem;
+  color: var(--gold-dim);
+  margin-top: 0.5rem;
+  transition: color 0.2s, transform 0.2s;
+  display: inline-block;
+}
+
+.serviceCard:hover .serviceArrow {
+  color: var(--gold);
+  transform: translateX(4px);
+}
+
+/* CTA BANNER */
+.ctaBanner {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 5rem 0;
+}
+
+.ctaInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+
+.ctaTitle {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: var(--white);
+  margin-top: 0.5rem;
+}
+
+.ctaActions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 360px;
+}
+
+.ctaNote {
+  font-size: 0.9rem;
+  color: var(--white-dim);
+  line-height: 1.65;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .servicesGrid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .heroGrid {
+    grid-template-columns: 1fr;
+    padding: 3rem 1.25rem 2rem;
+    gap: 3rem;
+  }
+  .heroImage { order: -1; max-width: 360px; margin: 0 auto; }
+  .heroTitle { align-items: center; text-align: center; }
+  .titleLine2 { padding-left: 0; }
+  .heroDesc { text-align: center; margin: 0 auto; }
+  .heroCtas { justify-content: center; }
+  .heroStats { justify-content: center; }
+  .introGrid { grid-template-columns: 1fr; gap: 2rem; }
+  .introRight { padding-top: 0; }
+  .ctaInner { flex-direction: column; gap: 2rem; }
+}
+
+@media (max-width: 640px) {
+  .servicesGrid { grid-template-columns: 1fr; }
+}
